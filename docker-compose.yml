@@ -1,12 +1,11 @@
 version: '3'
- 
 services:
     server:
-        build:
-            context: ./docker
-            args:
-                SSH_MASTER_USER: ${SSH_MASTER_USER}
-                SSH_MASTER_PASS: ${SSH_MASTER_PASS}
+        image: "grigiu/sftp:latest"
+        restart: always
+        environment:
+          SSH_MASTER_USER: "master"
+          SSH_MASTER_PASS: "master"
         hostname: server
         ports:
             - "2222:22"
