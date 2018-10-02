@@ -16,7 +16,7 @@ sftp_server         "/usr/local/bin/entr…"   0.0.0.0:2222->22/tcp   sftp_serve
 Remember this user is responsible for creating new SSH and SFTP users.
 
 
-$ ssh master@container-ip -p 22 # Password is master
+$ ssh master@container-ip -p 2222 # Password is master
 
 # Add a new SFTP user
 
@@ -24,10 +24,15 @@ Login as "master" user and run commands below.
 
 
 $ sudo mkdir /uploads/grigiu
+
 $ sudo mkdir /uploads/grigiu/upload
+
 $ sudo useradd -d /uploads/grigiu -G sftp grigiu -s /usr/sbin/nologin
+
 $ echo "grigiu:grigiu" | sudo chpasswd
+
 $ sudo chown grigiu:sftp -R /uploads/grigiu/upload
+
 
 # SFTP user login
 
@@ -36,7 +41,8 @@ sftp>
 
 # Client connection test
 
-I am running the container in a Vagrant box and its IP address is 192.168.99.30. I had to add CONTAINER_IP localhost to /etc/hosts file in Vagrant box. Open up a FTP client (e.g. FileZilla) and use values below to connect.
+I am running the container in a VM and its IP address is 192.168.99.30. 
+Open up a FTP client (e.g. FileZilla) and use values below to connect.
 
 
 - Host: 192.168.99.30
