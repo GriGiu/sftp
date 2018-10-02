@@ -3,22 +3,22 @@ With this docker, you can create a SSH and SFTP users. SFTP users are restricted
 # user.sh
 This file creates master user, assigns /home/master as home, ssh as user group and sets master as password. Apart from all that, it grants rm, mkdir, chown, useradd, deluser and chpasswd command usages with the help of sudo command. This user now can create a new SSH user and revert what he has done. The sftp group will be used for new SFTP users.
 
-#Test
+# Test
 
-#Run container
+# Run container
 $ docker-compose up -d
  
 IMAGE               COMMAND                  PORTS                  NAMES
 sftp_server         "/usr/local/bin/entr…"   0.0.0.0:2222->22/tcp   sftp_server_1
 
-#SSH user login
+# SSH user login
 
 Remember this user is responsible for creating new SSH and SFTP users.
 
 
 $ ssh master@container-ip -p 22 # Password is master
 
-#Add a new SFTP user
+# Add a new SFTP user
 
 Login as "master" user and run commands below.
 
@@ -29,12 +29,12 @@ $ sudo useradd -d /uploads/grigiu -G sftp grigiu -s /usr/sbin/nologin
 $ echo "grigiu:grigiu" | sudo chpasswd
 $ sudo chown grigiu:sftp -R /uploads/grigiu/upload
 
-#SFTP user login
+# SFTP user login
 
 $ sftp grigiu@container-ip
 sftp>
 
-#Client connection test
+# Client connection test
 
 I am running the container in a Vagrant box and its IP address is 192.168.99.30. I had to add CONTAINER_IP localhost to /etc/hosts file in Vagrant box. Open up a FTP client (e.g. FileZilla) and use values below to connect.
 
