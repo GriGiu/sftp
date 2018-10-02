@@ -1,4 +1,6 @@
-FROM debian:9.5
+FROM debian:stretch-slim
+
+MAINTAINER Gri Giu <grigiu@gmail.com>
  
 ARG SSH_MASTER_USER=grigiu
 ARG SSH_MASTER_PASS=grigiu
