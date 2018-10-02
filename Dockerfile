@@ -1,10 +1,7 @@
 FROM debian:9.5
  
-ARG SSH_MASTER_USER
-ARG SSH_MASTER_PASS
-
-ENV SSH_MASTER_USER=grigiu
-ENV SSH_MASTER_PASS=grigiu
+ARG SSH_MASTER_USER=grigiu
+ARG SSH_MASTER_PASS=grigiu
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
