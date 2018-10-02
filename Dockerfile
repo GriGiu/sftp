@@ -2,8 +2,8 @@ FROM debian:stretch-slim
 
 MAINTAINER Gri Giu <grigiu@gmail.com>
  
-ARG SSH_MASTER_USER=grigiu
-ARG SSH_MASTER_PASS=grigiu
+ARG SSH_MASTER_USER=master
+ARG SSH_MASTER_PASS=master
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
