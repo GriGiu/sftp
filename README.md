@@ -23,15 +23,15 @@ $ ssh master@container-ip -p 22 # Password is master
 Login as "master" user and run commands below.
 
 
-$ sudo mkdir /uploads/inanzzz
-$ sudo mkdir /uploads/inanzzz/upload
-$ sudo useradd -d /uploads/inanzzz -G sftp inanzzz -s /usr/sbin/nologin
-$ echo "inanzzz:inanzzz" | sudo chpasswd
-$ sudo chown inanzzz:sftp -R /uploads/inanzzz/upload
+$ sudo mkdir /uploads/grigiu
+$ sudo mkdir /uploads/grigiu/upload
+$ sudo useradd -d /uploads/grigiu -G sftp grigiu -s /usr/sbin/nologin
+$ echo "grigiu:grigiu" | sudo chpasswd
+$ sudo chown grigiu:sftp -R /uploads/grigiu/upload
 
 #SFTP user login
 
-$ sftp inanzzz@container-ip
+$ sftp grigiu@container-ip
 sftp>
 
 #Client connection test
@@ -43,5 +43,5 @@ I am running the container in a Vagrant box and its IP address is 192.168.99.30.
 - Port: 2222
 - Protocol: SFTP
 - Logon Type: Ask for password
-- Username: inanzzz
-- Password: inanzzz
+- Username: grigiu
+- Password: grigiu
