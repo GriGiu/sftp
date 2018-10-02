@@ -1,7 +1,5 @@
 # sftp server
 
-![Docker Automated build] ![Docker Build Status] ![Docker Stars] ![Docker Pulls]
-
 
 With this docker, you can create a SSH and SFTP users. SFTP users are restricted to their "home" directories and defined as "non-interactive shell user" which means they cannot login to the server as a "normal" user. They are allowed to use sftp protocol only.
 # user.sh
