@@ -38,7 +38,7 @@ $ sudo chown grigiu:sftp -R /uploads/grigiu/upload
 
 ## SFTP user login
 
-$ sftp grigiu@container-ip
+$ sftp -P 2222 grigiu@container-ip
 sftp>
 
 ## Client connection test
